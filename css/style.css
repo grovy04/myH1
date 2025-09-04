@@ -1,0 +1,98 @@
+* {margin: 0;}
+ul, li, ol {list-style: none; margin: 0; padding: 0;}
+a {text-decoration: none; color:#333;}
+/* wrap */
+#wrap{
+    border-style:solid; 
+    border-color:blue;
+    box-sizing:border-box;
+    margin:0 auto;
+    width:1100px;
+    min-height:400px;
+} 
+
+/* 슬라이드 스타일 */
+#slidewrap {
+    width: 1000px;
+    height: 350px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+.slide {
+    width: 3000px;
+    position: relative;
+    left: 0;
+    display: flex;
+    transition: left 0.5s ease;
+}
+.slide li {
+    width: 1000px;
+    height: 350px;
+    flex-shrink: 0;
+}
+.slide li img {
+    width: 100%;
+    height: 100%;
+}
+#slidewrap p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    border-radius: 10px;
+    height: 60px;
+    line-height: 60px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* 메뉴 스타일 */
+.menu {
+    margin: 0 auto;    /* 상단 중앙 정렬을 위해 좌우 마진 처리 */ 
+    padding-top: 10px; /* 상단 여백 약간 추가 */                  
+    float: none;       /* float 해제 */                            
+    width: 700px;
+    display: flex;     /* 가로 배치를 flex로 변경 */                
+    justify-content: center; /* 가로 중앙 정렬 */                 
+}
+.menu > li {
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+    transition: all 0.5s ease;
+    line-height: 40px;
+    background: #000;
+    position: relative; /* 서브 메뉴 위치 기준 */
+}
+.menu > li > a {
+    color: #fff;
+    display: block;
+}
+.menu > li:hover > a {
+    color: #000;
+}
+.menu > li:hover {
+    background-color: #fff;
+}
+.sub {
+    background-color: #ccc;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 40px; /* li 높이와 일치 */
+    z-index: 1000;
+}
+.sub > li {
+    transition: all 0.5s ease; /*점진적인 변화 */
+}
+.sub > li > a:hover {
+    background-color: gold;
+    display: block;
+}
